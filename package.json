@@ -1,5 +1,5 @@
 {
-	"name": "browser-esm-vite-react",
+	"name": "dev-typing",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
