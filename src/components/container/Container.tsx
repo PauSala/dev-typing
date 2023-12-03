@@ -133,11 +133,12 @@ export default function Container() {
                 setShow(true);
               }, 500);
             }}
+            defaultValue={"rust"}
           >
             <option value="c">C</option>
             <option value="java">Java</option>
             <option value="javascript">Javascript</option>
-            <option value="rust" selected={true}>
+            <option value="rust">
               Rust
             </option>
             <option value="typescript">Typescript</option>
