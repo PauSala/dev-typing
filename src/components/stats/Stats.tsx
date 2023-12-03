@@ -24,7 +24,7 @@ function StatsCard({
 export default function Stats({ stats }: { stats: SessionStats }) {
   return (
     <div className="flex flex-row p-4">
-      <StatsCard color="text-purple-200" name="Accuray" value={`${stats.accuracy.toFixed(2)}%`} ></StatsCard>
+      <StatsCard color="text-purple-200" name="Accuracy" value={`${stats.accuracy.toFixed(2)}%`} ></StatsCard>
       <StatsCard color="text-purple-200" name="Time" value={`${stats.time.toFixed(2)} seconds`} ></StatsCard>
       <StatsCard color="text-purple-200" name="WPM" value={`${stats.wpm.toFixed(2)}`} ></StatsCard>
     </div>
