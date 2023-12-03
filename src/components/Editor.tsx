@@ -80,6 +80,7 @@ export const Editor = ({
           monaco.KeyCode.DownArrow,
           monaco.KeyCode.LeftArrow,
           monaco.KeyCode.RightArrow,
+          monaco.KeyCode.Tab
         ].includes(event.keyCode)
       ) {
         event.preventDefault();
