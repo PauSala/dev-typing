@@ -27,6 +27,7 @@ export const Editor = ({
   const monacoEl = useRef(null);
   const sound = new Howl({
     src: [Sound],
+    volume: 0.3
   });
 
   useEffect(() => {
