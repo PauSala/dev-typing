@@ -8,6 +8,7 @@
 		"simpleserver": "node ../node_modules/yaserver/bin/yaserver --root ./dist --port 9999"
 	},
 	"devDependencies": {
+		"@types/howler": "^2.2.11",
 		"@types/lodash": "^4.14.202",
 		"@types/react": "^18.2.41",
 		"@types/react-dom": "^18.2.17",
@@ -22,6 +23,7 @@
 		"vite": "^5.0.4"
 	},
 	"dependencies": {
+		"react-howler": "^5.2.0",
 		"recharts": "^2.10.3"
 	}
 }

@@ -1,6 +1,9 @@
-import { VFC, useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import * as monaco from "monaco-editor/esm/vs/editor/editor.api";
 import styles from "./Editor.module.css";
+
+import { Howl } from "howler";
+import Sound from "../public/type2.mp3";
 
 export const Editor = ({
   errorHandler,
@@ -9,7 +12,7 @@ export const Editor = ({
   endHandler,
   saveCurrentModelHandler,
   model,
-  lang
+  lang,
 }: {
   startHandler: () => void;
   endHandler: () => void;
@@ -17,12 +20,14 @@ export const Editor = ({
   correctHandler: () => void;
   saveCurrentModelHandler: (model: string) => void;
   model: string;
-  lang: string
+  lang: string;
 }) => {
-
   const [editor, setEditor] =
     useState<monaco.editor.IStandaloneCodeEditor | null>(null);
   const monacoEl = useRef(null);
+  const sound = new Howl({
+    src: [Sound],
+  });
 
   useEffect(() => {
     if (monacoEl) {
@@ -80,7 +85,7 @@ export const Editor = ({
           monaco.KeyCode.DownArrow,
           monaco.KeyCode.LeftArrow,
           monaco.KeyCode.RightArrow,
-          monaco.KeyCode.Tab
+          monaco.KeyCode.Tab,
         ].includes(event.keyCode)
       ) {
         event.preventDefault();
@@ -110,6 +115,7 @@ export const Editor = ({
             lineNumber: currentPosition.lineNumber + 1,
             column: newColumn,
           });
+          sound.play();
         }
       } else {
         if (currentPosition) {
@@ -138,7 +144,7 @@ export const Editor = ({
               stickiness: 1,
             },
           };
-
+          sound.play();
           // Apply the decorator
           if (char === event.browserEvent.key) {
             correctHandler();
