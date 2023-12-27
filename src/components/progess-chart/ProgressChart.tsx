@@ -21,7 +21,6 @@ export default function ProgressChart({ data, width }: { data: GlobalStats, widt
       minWmp = e.wpm;
     }
   });
-
   const normalized = [...data].map((e) => {
     e.accuracy = ((e.accuracy - minAcc) / (maxAcc - minAcc)) * 100;
     e.wpm = ((e.wpm - minWmp) / (maxWpm - minWmp)) * 100;
